@@ -6,18 +6,20 @@ edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "custom_token"
+name = "custom_token_using_spl_token_library"
+
+
 
 [features]
-default = []
-cpi = ["no-entrypoint"]
 no-entrypoint = []
 no-idl = []
 no-log-ix-name = []
+cpi = ["no-entrypoint"]
 idl-build = ["anchor-lang/idl-build"]
-
+default = []
 
 [dependencies]
 anchor-lang = "0.31.1"
-spl-token-2022 = "9.0.0"
+spl-token-2022 = { version = "9.0.0", features = ["no-entrypoint"] }
+spl-associated-token-account = { version = "7.0.0", features = ["no-entrypoint"] }
 spl-pod = "0.5.1"
