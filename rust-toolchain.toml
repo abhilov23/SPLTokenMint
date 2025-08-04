@@ -1,0 +1,6 @@
+cat > rust-toolchain.toml << EOF
+[toolchain]
+channel = "1.88.0"
+components = ["rustfmt", "clippy"]
+targets = ["wasm32-unknown-unknown"]
+EOF
